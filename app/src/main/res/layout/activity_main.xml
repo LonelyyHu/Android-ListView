@@ -6,13 +6,66 @@
     android:layout_height="match_parent"
     tools:context="com.lonelyyhu.exercise.customlistview.MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/btn_simple"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onClick"
+        android:text="Simple"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btn_head_foot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onClick"
+        android:text="Header-Footer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_simple" />
+
+    <Button
+        android:id="@+id/btn_custom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onClick"
+        android:text="Custom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_head_foot" />
+
+    <Button
+        android:id="@+id/btn_simple_rv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="onClick"
+        android:text="Simple Recycler View"
+        app:layout_constraintStart_toStartOf="@+id/btn_simple"
+        app:layout_constraintTop_toBottomOf="@+id/btn_custom" />
+
+    <Button
+        android:id="@+id/btn_multi_type_rv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="onClick"
+        android:text="multi-type recycler view"
+        app:layout_constraintStart_toStartOf="@+id/btn_simple"
+        app:layout_constraintTop_toBottomOf="@+id/btn_simple_rv" />
+
+    <Button
+        android:id="@+id/btn_head_foot_rv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="onClick"
+        android:text="Header-Footer Recycler View"
+        app:layout_constraintStart_toStartOf="@+id/btn_simple"
+        app:layout_constraintTop_toBottomOf="@+id/btn_multi_type_rv" />
 </android.support.constraint.ConstraintLayout>
