@@ -22,4 +22,12 @@ public class LetterModel {
     public String getLowerCase() {
         return lowerCase;
     }
+
+    public void setUpperCase(String upperCase) {
+        this.upperCase = upperCase;
+    }
+
+    public void setLowerCase(String lowerCase) {
+        this.lowerCase = lowerCase;
+    }
 }

@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(this, HeaderFooterActivity.class);
                 break;
 
-            case R.id.btn_custom:
-                intent = new Intent(this, CustomActivity.class);
+            case R.id.btn_multi_type_lv:
+                intent = new Intent(this, MultiTypeListViewActivity.class);
                 break;
 
             case R.id.btn_simple_rv:

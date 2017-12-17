@@ -22,7 +22,7 @@
         <activity
             android:name=".SimpleListViewActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".CustomActivity" />
+        <activity android:name=".MultiTypeListViewActivity" />
         <activity android:name=".SimpleRecyclerViewActivity" />
         <activity android:name=".MultiTypeRecyclerViewActivity" />
         <activity android:name=".HeaderFooterRecyclerViewActivity"></activity>

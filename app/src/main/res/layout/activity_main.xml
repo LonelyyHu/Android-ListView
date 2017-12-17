@@ -29,13 +29,13 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_simple" />
 
     <Button
-        android:id="@+id/btn_custom"
+        android:id="@+id/btn_multi_type_lv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:onClick="onClick"
-        android:text="Custom"
+        android:text="Multi-Type List View"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_head_foot" />
 
@@ -47,7 +47,7 @@
         android:onClick="onClick"
         android:text="Simple Recycler View"
         app:layout_constraintStart_toStartOf="@+id/btn_simple"
-        app:layout_constraintTop_toBottomOf="@+id/btn_custom" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_multi_type_lv" />
 
     <Button
         android:id="@+id/btn_multi_type_rv"

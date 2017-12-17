@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.lonelyyhu.exercise.customlistview.R;
@@ -18,7 +19,7 @@ import java.util.List;
  * Created by hulonelyy on 2017/11/18.
  */
 
-public class CustomeAdapter extends BaseAdapter {
+public class MultiTypeListViewAdapter extends BaseAdapter {
 
     public static final int VIEW_TYPE_NORMAL = 0;
     public static final int VIEW_TYPE_AD = 1;
@@ -26,7 +27,7 @@ public class CustomeAdapter extends BaseAdapter {
     private List<DataModel> dataModels = new ArrayList<>();
     private LayoutInflater layoutInflater;
 
-    public CustomeAdapter(List<LetterModel> letterModels, LayoutInflater layoutInflater) {
+    public MultiTypeListViewAdapter(List<LetterModel> letterModels, LayoutInflater layoutInflater) {
 
         this.layoutInflater = layoutInflater;
 
@@ -75,8 +76,8 @@ public class CustomeAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        Log.wtf("CustomeAdapter", "getView, position: " + position);
-        Log.wtf("CustomeAdapter", "getView, convertView: " + convertView);
+        Log.wtf("MultiTypeListViewAdapter", "getView, position: " + position);
+        Log.wtf("MultiTypeListViewAdapter", "getView, convertView: " + convertView);
 
         DataModel model = dataModels.get(position);
         ViewHolder holder = null;
@@ -122,6 +123,49 @@ public class CustomeAdapter extends BaseAdapter {
         }
 
         return convertView;
+    }
+
+    public void clearData() {
+        dataModels.clear();
+        notifyDataSetChanged();
+    }
+
+    public void swapData(List<LetterModel> letterModels) {
+
+        dataModels.clear();
+
+        for (int i = 0; i < letterModels.size(); i++) {
+
+            DataModel model = new DataModel();
+
+            if ( i > 0 && (i%5) == 0) {
+                DataModel adModel = new DataModel();
+                adModel.viewType = VIEW_TYPE_AD;
+                dataModels.add(adModel);
+            }
+
+            model.letterModel = letterModels.get(i);
+            dataModels.add(model);
+
+        }
+
+        notifyDataSetChanged();
+    }
+
+    public void updateItemView(ListView listView, int position) {
+        int index = position - listView.getFirstVisiblePosition();
+        if (index >= 0 && index < listView.getChildCount()) {
+            DataModel dataModel = dataModels.get(position);
+
+            if (dataModel.viewType == VIEW_TYPE_NORMAL) {
+                dataModel.letterModel.setLowerCase("-");
+                dataModel.letterModel.setUpperCase("-");
+            }
+
+            View itemView = listView.getChildAt(index);
+            getView(position, itemView, listView);
+//            notifyDataSetChanged();
+        }
     }
 
     private class ViewHolder {
